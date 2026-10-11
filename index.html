@@ -41,8 +41,13 @@
         .service-card h3 { color: var(--rose-light); margin-bottom: 0.8rem; font-size: 1.25rem; }
         .service-card p { font-size: 0.95rem; color: #ddd; }
 
-        .flyers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-        .flyer-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .about-section { background: rgba(74, 21, 37, 0.25); border-top: 1px solid rgba(223, 177, 91, 0.2); border-bottom: 1px solid rgba(223, 177, 91, 0.2); }
+        .about-container { max-width: 800px; margin: 0 auto; text-align: center; background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 16px; padding: 3rem 2.5rem; backdrop-filter: blur(10px); }
+        .about-container h3 { color: var(--gold); font-size: 2rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; }
+        .about-container p { font-size: 1.1rem; color: var(--rose-light); line-height: 1.8; font-style: italic; }
+
+        .flyers-grid { display: flex; justify-content: center; margin-bottom: 3rem; }
+        .flyer-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 450px; width: 100%; }
         .flyer-card img { width: 100%; height: auto; display: block; object-fit: cover; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
@@ -100,6 +105,7 @@
         <a href="#"><img src="images/logo.jpg" alt="Lantash Beauty Lounge Logo" class="logo-img"></a>
         <nav>
             <a href="#services">Services</a>
+            <a href="#about">About</a>
             <a href="#flyers">Flyers</a>
             <a href="#gallery">Gallery</a>
             <a href="#reviews">Reviews</a>
@@ -143,14 +149,18 @@
         </div>
     </section>
 
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h3>Meet the Founder & Artist</h3>
+            <p>"I’m a professional makeup artist and hairstylist with a passion for helping clients feel beautiful and confident. I offer a welcoming, personalised experience for each client."</p>
+        </div>
+    </section>
+
     <section id="flyers">
-        <h2>Official Lounge Flyers</h2>
+        <h2>Official Lounge Flyer</h2>
         <div class="flyers-grid">
             <div class="flyer-card">
-                <img src="images/flyer1.jpg" alt="Lantash Beauty Lounge Flyer Gold Edition">
-            </div>
-            <div class="flyer-card">
-                <img src="images/flyer2.jpg" alt="Lantash Beauty Lounge Flyer Pink Edition">
+                <img src="images/flyer2.jpg" alt="Lantash Beauty Lounge Official Flyer">
             </div>
         </div>
     </section>
