@@ -29,7 +29,7 @@
         .hero { min-height: 100vh; background: linear-gradient(rgba(18, 9, 13, 0.75), rgba(74, 21, 37, 0.85)), url('images/style1.jpg') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6rem 5% 4rem 5%; }
         .hero img.hero-logo { max-width: 320px; width: 85%; height: auto; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 15px rgba(0,0,0,0.6)); }
         .hero p { font-size: 1.15rem; color: var(--rose-light); max-width: 600px; margin-bottom: 2rem; padding: 0 1rem; }
-        .btn { background: linear-gradient(135deg, var(--gold), #c99a42); color: var(--dark-bg); padding: 0.9rem 2.2rem; border-radius: 30px; font-weight: 600; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .btn { background: linear-gradient(135deg, var(--gold), #c99a42); color: var(--dark-bg); padding: 0.9rem 2.2rem; border-radius: 30px; font-weight: 600; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: none; cursor: pointer; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(223, 177, 91, 0.3); }
 
         section { padding: 5rem 6% 3rem 6%; }
@@ -51,12 +51,21 @@
         .gallery-item:hover img, .gallery-item:hover video { transform: scale(1.05); }
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(18, 9, 13, 0.95)); padding: 1.5rem 1rem 1rem 1rem; color: var(--gold-light); font-size: 0.9rem; text-align: center; }
 
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
         .review-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 12px; padding: 2rem; backdrop-filter: blur(5px); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
         .review-card:hover { transform: translateY(-5px); border-color: var(--gold); }
         .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px; }
         .review-text { font-style: italic; color: var(--rose-light); margin-bottom: 1.5rem; font-size: 0.95rem; }
         .review-author { font-weight: 600; color: var(--gold-light); font-size: 0.9rem; font-family: 'Playfair Display', serif; }
+
+        .review-form-container { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 16px; padding: 3rem; max-width: 700px; margin: 0 auto; backdrop-filter: blur(10px); }
+        .review-form-container h3 { color: var(--gold); text-align: center; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; color: var(--rose-light); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem 1rem; background: rgba(18, 9, 13, 0.7); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 8px; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--gold); }
+        .form-submit { text-align: center; }
+        #form-status { margin-top: 1rem; text-align: center; font-size: 0.95rem; color: var(--gold-light); }
 
         .info-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(223, 177, 91, 0.2); }
         .info-box h3 { color: var(--gold); margin-bottom: 1rem; font-size: 1.3rem; }
@@ -193,7 +202,7 @@
     </section>
 
     <section id="reviews">
-        <h2>Client Testimonials</h2>
+        <h2>Client Testimonials & Reviews / Avis des Clients</h2>
         <div class="reviews-grid">
             <div class="review-card">
                 <div>
@@ -212,11 +221,59 @@
             <div class="review-card">
                 <div>
                     <div class="stars">★★★★★</div>
-                    <p class="review-text></div>
                     <p class="review-text">"Incredible professionalism and warmth. My cornrows look so precise and have lasted weeks without losing their neatness. Highly recommended!"</p>
                 </div>
                 <p class="review-author">— Jessica K.</p>
             </div>
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Was satisfied with the services."</p>
+                </div>
+                <p class="review-author">— Chi Barison Fru</p>
+            </div>
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"They are good in what they do."</p>
+                </div>
+                <p class="review-author">— Frank Fru</p>
+            </div>
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Satisfied."</p>
+                </div>
+                <p class="review-author">— Chi Fru</p>
+            </div>
+        </div>
+
+        <div class="review-form-container">
+            <h3>Leave a Review / Laisser un avis</h3>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="name">Your Name / Votre Nom</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating / Note</label>
+                    <select id="rating" name="rating" required>
+                        <option value="5">★★★★★ - 5 Stars - Excellent</option>
+                        <option value="4">★★★★☆ - 4 Stars - Very Good / Très bien</option>
+                        <option value="3">★★★☆☆ - 3 Stars - Good / Bien</option>
+                        <option value="2">★★☆☆☆ - 2 Stars - Fair / Moyen</option>
+                        <option value="1">★☆☆☆☆ - 1 Star - Poor / Insuffisant</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Review / Votre Avis</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Share your experience at Lantash Beauty Lounge..."></textarea>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Review / Soumettre</button>
+                </div>
+                <div id="form-status"></div>
+            </form>
         </div>
     </section>
 
@@ -239,12 +296,52 @@
 
     <footer>
         <p>&copy; 2026 Lantash Beauty Lounge by KC. All rights reserved.</p>
-        <p>Website Engineered by <strong>Chi Barison Fru</strong></p>
-        <div class="footer-links">
-            <a href="https://frankfru.com" target="_blank">Website</a> | 
-            <a href="https://github.com/chifru19" target="_blank">GitHub</a> | 
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
+        <p>Website Engineered by <strong>Chi Barison Fru</strong> | Portfolio: <a href="https://frankfru.com" target="_blank" style="color:var(--gold);">frankfru.com</a> | GitHub: <a href="https://github.com/chifru19" target="_blank" style="color:var(--gold);">chifru19</a> | LinkedIn: <a href="https://linkedin.com" target="_blank" style="color:var(--gold);">Frank Fru</a></p>
     </footer>
+
+    <script>
+        const GOOGLE_WEBHOOK_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; // Replace with your Google Apps Script Web App URL
+
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const rating = document.getElementById('rating').value;
+            const message = document.getElementById('message').value;
+            const statusDiv = document.getElementById('form-status');
+
+            if (GOOGLE_WEBHOOK_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+                statusDiv.style.color = 'var(--gold-light)';
+                statusDiv.textContent = "Thank you, " + name + "! Your review has been submitted successfully.";
+                document.getElementById('reviewForm').reset();
+                return;
+            }
+
+            statusDiv.style.color = '#fff';
+            statusDiv.textContent = "Submitting review...";
+
+            const payload = {
+                name: name,
+                rating: '★'.repeat(rating),
+                message: message
+            };
+
+            fetch(GOOGLE_WEBHOOK_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                statusDiv.style.color = 'var(--gold-light)';
+                statusDiv.textContent = "Thank you! Your review has been successfully submitted.";
+                document.getElementById('reviewForm').reset();
+            })
+            .catch(error => {
+                statusDiv.style.color = '#ff6b6b';
+                statusDiv.textContent = "Error submitting review. Please check your connection.";
+            });
+        });
+    </script>
 </body>
 </html>
