@@ -59,7 +59,7 @@
         .review-author { font-weight: 600; color: var(--gold-light); font-size: 0.9rem; font-family: 'Playfair Display', serif; }
 
         .review-form-container { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 16px; padding: 3rem; max-width: 700px; margin: 0 auto; backdrop-filter: blur(10px); }
-        .review-form-container h3 { color: var(--gold); text-align: center; margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .review-form-container h3 { color: var(--gold); text-align: center; margin-bottom: 1.5rem; font-size: 1.8rem; font-family: 'Playfair Display', serif; }
         .form-group { margin-bottom: 1.5rem; }
         .form-group label { display: block; color: var(--rose-light); margin-bottom: 0.5rem; font-size: 0.95rem; }
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem 1rem; background: rgba(18, 9, 13, 0.7); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 8px; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; }
@@ -202,7 +202,7 @@
     </section>
 
     <section id="reviews">
-        <h2>Client Testimonials & Reviews / Avis des Clients</h2>
+        <h2>Client Testimonials</h2>
         <div class="reviews-grid">
             <div class="review-card">
                 <div>
@@ -225,52 +225,31 @@
                 </div>
                 <p class="review-author">— Jessica K.</p>
             </div>
-            <div class="review-card">
-                <div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Was satisfied with the services."</p>
-                </div>
-                <p class="review-author">— Chi Barison Fru</p>
-            </div>
-            <div class="review-card">
-                <div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"They are good in what they do."</p>
-                </div>
-                <p class="review-author">— Frank Fru</p>
-            </div>
-            <div class="review-card">
-                <div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Satisfied."</p>
-                </div>
-                <p class="review-author">— Chi Fru</p>
-            </div>
         </div>
 
         <div class="review-form-container">
-            <h3>Leave a Review / Laisser un avis</h3>
+            <h3>Leave Your Review</h3>
             <form id="reviewForm">
                 <div class="form-group">
-                    <label for="name">Your Name / Votre Nom</label>
+                    <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required placeholder="Enter your full name">
                 </div>
                 <div class="form-group">
-                    <label for="rating">Rating / Note</label>
+                    <label for="rating">Rating</label>
                     <select id="rating" name="rating" required>
-                        <option value="5">★★★★★ - 5 Stars - Excellent</option>
-                        <option value="4">★★★★☆ - 4 Stars - Very Good / Très bien</option>
-                        <option value="3">★★★☆☆ - 3 Stars - Good / Bien</option>
-                        <option value="2">★★☆☆☆ - 2 Stars - Fair / Moyen</option>
-                        <option value="1">★☆☆☆☆ - 1 Star - Poor / Insuffisant</option>
+                        <option value="5">★★★★★ (5 Stars - Excellent)</option>
+                        <option value="4">★★★★☆ (4 Stars - Very Good)</option>
+                        <option value="3">★★★☆☆ (3 Stars - Good)</option>
+                        <option value="2">★★☆☆☆ (2 Stars - Fair)</option>
+                        <option value="1">★☆☆☆☆ (1 Star - Poor)</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Your Review / Votre Avis</label>
+                    <label for="message">Your Review</label>
                     <textarea id="message" name="message" rows="4" required placeholder="Share your experience at Lantash Beauty Lounge..."></textarea>
                 </div>
                 <div class="form-submit">
-                    <button type="submit" class="btn">Submit Review / Soumettre</button>
+                    <button type="submit" class="btn">Submit Review</button>
                 </div>
                 <div id="form-status"></div>
             </form>
@@ -300,7 +279,7 @@
     </footer>
 
     <script>
-        const GOOGLE_WEBHOOK_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; // Replace with your Google Apps Script Web App URL
+        const GOOGLE_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyKkUkBcgFf2kSbQKIUf74kbf_xmj_EnWDSAhH1B504Duc4xSibKOc5ypB-ulPPJFiR/exec';
 
         document.getElementById('reviewForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -309,13 +288,6 @@
             const rating = document.getElementById('rating').value;
             const message = document.getElementById('message').value;
             const statusDiv = document.getElementById('form-status');
-
-            if (GOOGLE_WEBHOOK_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-                statusDiv.style.color = 'var(--gold-light)';
-                statusDiv.textContent = "Thank you, " + name + "! Your review has been submitted successfully.";
-                document.getElementById('reviewForm').reset();
-                return;
-            }
 
             statusDiv.style.color = '#fff';
             statusDiv.textContent = "Submitting review...";
