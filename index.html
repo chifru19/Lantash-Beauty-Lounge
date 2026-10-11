@@ -202,8 +202,9 @@
     </section>
 
     <section id="reviews">
-        <h2>Client Testimonials</h2>
-        <div class="reviews-grid">
+        <h2>Client Testimonials & Reviews</h2>
+        <div class="reviews-grid" id="reviewsContainer">
+            <!-- Initial static reviews -->
             <div class="review-card">
                 <div>
                     <div class="stars">★★★★★</div>
@@ -279,8 +280,36 @@
     </footer>
 
     <script>
-        const GOOGLE_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyKkUkBcgFf2kSbQKIUf74kbf_xmj_EnWDSAhH1B504Duc4xSibKOc5ypB-ulPPJFiR/exec';
+        const GOOGLE_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwGAdYCqyX0lc090fZ7Lc2cZDrNFJHvcOKBtwGEImJjpPtIG8zhp2amDvzarjdoLLQ/exec';
 
+        // Load reviews dynamically from Google Sheet
+        function loadReviews() {
+            fetch(GOOGLE_WEBHOOK_URL)
+                .then(response => response.json())
+                .then(data => {
+                    if (Array.isArray(data) && data.length > 0) {
+                        const container = document.getElementById('reviewsContainer');
+                        data.forEach(rev => {
+                            const card = document.createElement('div');
+                            card.className = 'review-card';
+                            card.innerHTML = `
+                                <div>
+                                    <div class="stars">${rev.rating}</div>
+                                    <p class="review-text">"${rev.message}"</p>
+                                </div>
+                                <p class="review-author">— ${rev.name}</p>
+                            `;
+                            container.appendChild(card);
+                        });
+                    }
+                })
+                .catch(err => console.log('Could not load dynamic reviews:', err));
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', loadReviews);
+
+        // Handle review form submission
         document.getElementById('reviewForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -306,8 +335,9 @@
             })
             .then(() => {
                 statusDiv.style.color = 'var(--gold-light)';
-                statusDiv.textContent = "Thank you! Your review has been successfully submitted.";
+                statusDiv.textContent = "Thank you! Your review has been successfully submitted and will appear shortly.";
                 document.getElementById('reviewForm').reset();
+                setTimeout(loadReviews, 2000);
             })
             .catch(error => {
                 statusDiv.style.color = '#ff6b6b';
