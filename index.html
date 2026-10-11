@@ -41,6 +41,10 @@
         .service-card h3 { color: var(--rose-light); margin-bottom: 0.8rem; font-size: 1.25rem; }
         .service-card p { font-size: 0.95rem; color: #ddd; }
 
+        .flyers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .flyer-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .flyer-card img { width: 100%; height: auto; display: block; object-fit: cover; }
+
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
         .gallery-item { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 12px; overflow: hidden; position: relative; aspect-ratio: 4/5; }
         .gallery-item img, .gallery-item video { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
@@ -56,7 +60,6 @@
         .footer-links a { color: var(--gold); text-decoration: none; margin: 0 8px; transition: color 0.3s; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--rose-light); text-decoration: underline; }
 
-        /* Responsive Breakpoints for Mobile & Tablets */
         @media (max-width: 900px) {
             .info-container { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
             section { padding: 4rem 4% 2.5rem 4%; }
@@ -81,6 +84,7 @@
         <a href="#"><img src="images/logo.jpg" alt="Lantash Beauty Lounge Logo" class="logo-img"></a>
         <nav>
             <a href="#services">Services</a>
+            <a href="#flyers">Flyers</a>
             <a href="#gallery">Gallery</a>
             <a href="#info">Contact</a>
         </nav>
@@ -118,6 +122,18 @@
             <div class="service-card">
                 <h3>Special Effects (SFX) Makeup</h3>
                 <p>Immersive, creative special-effects makeup for films and professional photography.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="flyers">
+        <h2>Official Lounge Flyers</h2>
+        <div class="flyers-grid">
+            <div class="flyer-card">
+                <img src="images/flyer1.jpg" alt="Lantash Beauty Lounge Flyer Gold Edition">
+            </div>
+            <div class="flyer-card">
+                <img src="images/flyer2.jpg" alt="Lantash Beauty Lounge Flyer Pink Edition">
             </div>
         </div>
     </section>
