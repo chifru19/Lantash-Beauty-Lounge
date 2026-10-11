@@ -51,6 +51,13 @@
         .gallery-item:hover img, .gallery-item:hover video { transform: scale(1.05); }
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(18, 9, 13, 0.95)); padding: 1.5rem 1rem 1rem 1rem; color: var(--gold-light); font-size: 0.9rem; text-align: center; }
 
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .review-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 12px; padding: 2rem; backdrop-filter: blur(5px); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
+        .review-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+        .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .review-text { font-style: italic; color: var(--rose-light); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .review-author { font-weight: 600; color: var(--gold-light); font-size: 0.9rem; font-family: 'Playfair Display', serif; }
+
         .info-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(223, 177, 91, 0.2); }
         .info-box h3 { color: var(--gold); margin-bottom: 1rem; font-size: 1.3rem; }
         .info-box p { font-size: 0.95rem; color: #ddd; }
@@ -86,6 +93,7 @@
             <a href="#services">Services</a>
             <a href="#flyers">Flyers</a>
             <a href="#gallery">Gallery</a>
+            <a href="#reviews">Reviews</a>
             <a href="#info">Contact</a>
         </nav>
     </header>
@@ -180,6 +188,34 @@
             <div class="gallery-item">
                 <video src="images/video7.mp4" autoplay muted loop playsinline></video>
                 <div class="gallery-caption">Close-up Braiding</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>Client Testimonials</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Cherry is exceptionally talented! My braids are so neat, lightweight, and gorgeous. The atmosphere at Lantash Beauty Lounge is pure luxury."</p>
+                </div>
+                <p class="review-author">— Amina M.</p>
+            </div>
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The best wig installation and makeup experience in Berlin! Cherry takes her time to ensure every detail is flawless. I felt like a queen."</p>
+                </div>
+                <p class="review-author">— Sarah T.</p>
+            </div>
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text></div>
+                    <p class="review-text">"Incredible professionalism and warmth. My cornrows look so precise and have lasted weeks without losing their neatness. Highly recommended!"</p>
+                </div>
+                <p class="review-author">— Jessica K.</p>
             </div>
         </div>
     </section>
