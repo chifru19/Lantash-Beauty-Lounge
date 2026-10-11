@@ -47,7 +47,10 @@
         .info-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: var(--card-bg); padding: 3rem; border-radius: 16px; border: 1px solid rgba(223, 177, 91, 0.2); }
         .info-box h3 { color: var(--gold); margin-bottom: 1rem; }
 
-        footer { background: #0a0507; text-align: center; padding: 2rem; border-top: 1px solid rgba(223, 177, 91, 0.2); color: #aaa; font-size: 0.9rem; }
+        footer { background: #0a0507; text-align: center; padding: 2.5rem 1rem; border-top: 1px solid rgba(223, 177, 91, 0.2); color: #aaa; font-size: 0.9rem; }
+        footer p { margin-bottom: 0.8rem; }
+        .footer-links a { color: var(--gold); text-decoration: none; margin: 0 10px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--rose-light); text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -99,7 +102,6 @@
     <section id="gallery">
         <h2>Portfolio Gallery</h2>
         <div class="gallery-grid">
-            <!-- Images -->
             <div class="gallery-item">
                 <img src="images/style1.jpg" alt="Curly Protective Braids">
                 <div class="gallery-caption">Curly Protective Braids</div>
@@ -112,8 +114,6 @@
                 <img src="images/style3.jpg" alt="Detailed Parting Work">
                 <div class="gallery-caption">Detailed Parting Work</div>
             </div>
-
-            <!-- Videos -->
             <div class="gallery-item">
                 <video src="images/video1.mp4" autoplay muted loop playsinline></video>
                 <div class="gallery-caption">Lounge Walk Showcase</div>
@@ -164,6 +164,12 @@
 
     <footer>
         <p>&copy; 2026 Lantash Beauty Lounge by KC. All rights reserved.</p>
+        <p>Website Engineered by <strong>Chi Barison Fru</strong></p>
+        <div class="footer-links">
+            <a href="https://frankfru.com" target="_blank">Website</a> | 
+            <a href="https://github.com/chifru19" target="_blank">GitHub</a> | 
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
     </footer>
 </body>
 </html>
