@@ -17,51 +17,51 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--dark-bg); color: #f5f5f5; line-height: 1.6; overflow-x: hidden; }
-        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
         
-        /* Header */
         header { background: rgba(18, 9, 13, 0.95); backdrop-filter: blur(10px); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(223, 177, 91, 0.2); display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: window.location.href; letter-spacing: 1px; }
+        .logo-img { height: 45px; width: auto; object-fit: contain; }
         nav a { color: #f5f5f5; text-decoration: none; margin-left: 2rem; font-size: 0.95rem; transition: color 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Hero */
         .hero { height: 100vh; background: linear-gradient(rgba(18, 9, 13, 0.7), rgba(74, 21, 37, 0.8)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 1rem; }
-        .hero h1 { font-size: 3.5rem; color: var(--gold); margin-bottom: 1rem; }
+        .hero img.hero-logo { max-width: 380px; width: 100%; height: auto; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 15px rgba(0,0,0,0.6)); }
         .hero p { font-size: 1.25rem; color: var(--rose-light); max-width: 600px; margin-bottom: 2rem; }
         .btn { background: linear-gradient(135deg, var(--gold), #c99a42); color: var(--dark-bg); padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; display: inline-block; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(223, 177, 91, 0.3); }
 
-        /* Sections */
         section { padding: 6rem 10% 4rem 10%; }
         section h2 { text-align: center; font-size: 2.5rem; color: var(--gold); margin-bottom: 3rem; }
 
-        /* Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .service-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 12px; padding: 2rem; text-align: center; backdrop-filter: blur(5px); transition: transform 0.3s; }
         .service-card:hover { transform: translateY(-5px); border-color: var(--gold); }
         .service-card h3 { color: var(--rose-light); margin-bottom: 1rem; font-size: 1.3rem; }
 
-        /* Info */
+        .filter-btns { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+        .filter-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.2rem; border-radius: 20px; cursor: pointer; transition: all 0.3s; font-weight: 500; }
+        .filter-btn.active, .filter-btn:hover { background: var(--gold); color: var(--dark-bg); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .gallery-item { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 10px; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; color: var(--gold-light); font-style: italic; }
+
         .info-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: var(--card-bg); padding: 3rem; border-radius: 16px; border: 1px solid rgba(223, 177, 91, 0.2); }
         .info-box h3 { color: var(--gold); margin-bottom: 1rem; }
 
-        /* Footer */
         footer { background: #0a0507; text-align: center; padding: 2rem; border-top: 1px solid rgba(223, 177, 91, 0.2); color: #aaa; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">LANTASH BEAUTY LOUNGE</div>
+        <a href="#"><img src="logo.jpeg" alt="Lantash Beauty Lounge Logo" class="logo-img"></a>
         <nav>
-            <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
             <a href="#info">Contact & Hours</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Lantash Beauty Lounge by KC</h1>
+        <img src="logo.jpeg" alt="Lantash Beauty Lounge Logo" class="hero-logo">
         <p>"Enhance your beauty with care and creativity." — Your beauty, our passion!</p>
         <a href="https://wa.me/491727548745" target="_blank" class="btn">Book via WhatsApp</a>
     </section>
@@ -93,6 +93,24 @@
                 <h3>Special Effects (SFX) Makeup</h3>
                 <p>Immersive, creative special-effects makeup for films and professional photography.</p>
             </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Portfolio Gallery</h2>
+        <div class="filter-btns">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Hairstyles & Braids</button>
+            <button class="filter-btn">Wigs & Extensions</button>
+            <button class="filter-btn">Makeup</button>
+            <button class="filter-btn">Bridal Looks</button>
+            <button class="filter-btn">Special Effects</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">Braids & Cornrows</div>
+            <div class="gallery-item">Wig Installations</div>
+            <div class="gallery-item">Bridal & Evening Makeup</div>
+            <div class="gallery-item">Special Effects Work</div>
         </div>
     </section>
 
