@@ -56,12 +56,13 @@
         .gallery-item:hover img, .gallery-item:hover video { transform: scale(1.05); }
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(18, 9, 13, 0.95)); padding: 1.5rem 1rem 1rem 1rem; color: var(--gold-light); font-size: 0.9rem; text-align: center; }
 
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-        .review-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 12px; padding: 2rem; backdrop-filter: blur(5px); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
+        /* Auto-adjusting reviews grid and cards */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; align-items: start; }
+        .review-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 12px; padding: 2rem; backdrop-filter: blur(5px); display: flex; flex-direction: column; justify-content: space-between; height: auto; min-height: 200px; transition: transform 0.3s; word-break: break-word; overflow-wrap: break-word; }
         .review-card:hover { transform: translateY(-5px); border-color: var(--gold); }
         .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px; }
-        .review-text { font-style: italic; color: var(--rose-light); margin-bottom: 1.5rem; font-size: 0.95rem; }
-        .review-author { font-weight: 600; color: var(--gold-light); font-size: 0.9rem; font-family: 'Playfair Display', serif; }
+        .review-text { font-style: italic; color: var(--rose-light); margin-bottom: 1.5rem; font-size: 0.95net; line-height: 1.6; }
+        .review-author { font-weight: 600; color: var(--gold-light); font-size: 0.9rem; font-family: 'Playfair Display', serif; margin-top: auto; }
 
         .review-form-container { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.3); border-radius: 16px; padding: 3rem; max-width: 700px; margin: 0 auto; backdrop-filter: blur(10px); }
         .review-form-container h3 { color: var(--gold); text-align: center; margin-bottom: 1.5rem; font-size: 1.8rem; font-family: 'Playfair Display', serif; }
@@ -292,7 +293,7 @@
     <script>
         const GOOGLE_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwGAdYCqyX0lc090fZ7Lc2cZDrNFJHvcOKBtwGEImJjpPtIG8zhp2amDvzarjdoLLQ/exec';
 
-        // Load reviews dynamically from Google Sheet
+        // Load reviews dynamically from Google Sheet with auto-adjusting card sizing
         function loadReviews() {
             fetch(GOOGLE_WEBHOOK_URL)
                 .then(response => response.json())
