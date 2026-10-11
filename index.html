@@ -3,15 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lantash Beauty Lounge by KC</title>
+    <title>Lantash Beauty Lounge by KC | Luxury Hair & Makeup Berlin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background: #fff0f5; color: #333; text-align: center; padding: 50px; }
-        h1 { color: #d87093; }
+        :root {
+            --rose-pink: #d87093;
+            --rose-light: #fff0f5;
+            --burgundy: #4a1525;
+            --gold: #dfb15b;
+            --gold-light: #f7e6c4;
+            --dark-bg: #12090d;
+            --card-bg: rgba(74, 21, 37, 0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--dark-bg); color: #f5f5f5; line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; }
+        
+        /* Header */
+        header { background: rgba(18, 9, 13, 0.95); backdrop-filter: blur(10px); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(223, 177, 91, 0.2); display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--gold); text-decoration: window.location.href; letter-spacing: 1px; }
+        nav a { color: #f5f5f5; text-decoration: none; margin-left: 2rem; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: var(--gold); }
+
+        /* Hero */
+        .hero { height: 100vh; background: linear-gradient(rgba(18, 9, 13, 0.7), rgba(74, 21, 37, 0.8)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 1rem; }
+        .hero h1 { font-size: 3.5rem; color: var(--gold); margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; color: var(--rose-light); max-width: 600px; margin-bottom: 2rem; }
+        .btn { background: linear-gradient(135deg, var(--gold), #c99a42); color: var(--dark-bg); padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; display: inline-block; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(223, 177, 91, 0.3); }
+
+        /* Sections */
+        section { padding: 6rem 10% 4rem 10%; }
+        section h2 { text-align: center; font-size: 2.5rem; color: var(--gold); margin-bottom: 3rem; }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--card-bg); border: 1px solid rgba(223, 177, 91, 0.2); border-radius: 12px; padding: 2rem; text-align: center; backdrop-filter: blur(5px); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+        .service-card h3 { color: var(--rose-light); margin-bottom: 1rem; font-size: 1.3rem; }
+
+        /* Info */
+        .info-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: var(--card-bg); padding: 3rem; border-radius: 16px; border: 1px solid rgba(223, 177, 91, 0.2); }
+        .info-box h3 { color: var(--gold); margin-bottom: 1rem; }
+
+        /* Footer */
+        footer { background: #0a0507; text-align: center; padding: 2rem; border-top: 1px solid rgba(223, 177, 91, 0.2); color: #aaa; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <h1>Lantash Beauty Lounge by KC</h1>
-    <p>Enhance your beauty with care and creativity.</p>
-    <p>📍 Ollenhauerstraße 18, 13403 Berlin</p>
+    <header>
+        <div class="logo">LANTASH BEAUTY LOUNGE</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#info">Contact & Hours</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Lantash Beauty Lounge by KC</h1>
+        <p>"Enhance your beauty with care and creativity." — Your beauty, our passion!</p>
+        <a href="https://wa.me/491727548745" target="_blank" class="btn">Book via WhatsApp</a>
+    </section>
+
+    <section id="services">
+        <h2>Our Signature Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Braids & Cornrows</h3>
+                <p>Precise, stylish, and neat protective braiding tailored to perfection.</p>
+            </div>
+            <div class="service-card">
+                <h3>Twists & Natural Hairstyles</h3>
+                <p>Beautiful natural styling and twists designed to protect and elevate your look.</p>
+            </div>
+            <div class="service-card">
+                <h3>Sew-ins & Hair Extensions</h3>
+                <p>Seamless blending and luxury volume extensions for a flawless finish.</p>
+            </div>
+            <div class="service-card">
+                <h3>Wig Installation & Styling</h3>
+                <p>Custom lace melting, styling, and flawless wig placements.</p>
+            </div>
+            <div class="service-card">
+                <h3>Makeup: Day, Evening & Bridal</h3>
+                <p>Professional makeup artistry enhancing your natural radiance for any special occasion.</p>
+            </div>
+            <div class="service-card">
+                <h3>Special Effects (SFX) Makeup</h3>
+                <p>Immersive, creative special-effects makeup for films and professional photography.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <h2>Visit & Connect</h2>
+        <div class="info-container">
+            <div class="info-box">
+                <h3>Location & Hours</h3>
+                <p><strong>Address:</strong><br>Ollenhauerstraße 18, 13403 Berlin</p><br>
+                <p><strong>Opening Hours:</strong><br>Monday – Saturday: 10:00 – 20:00</p>
+            </div>
+            <div class="info-box">
+                <h3>Appointments & Bookings</h3>
+                <p>Book directly through Instagram DM or via WhatsApp for immediate scheduling.</p><br>
+                <p><strong>Phone / WhatsApp:</strong> +49 172 7548745</p><br>
+                <a href="https://instagram.com" target="_blank" class="btn">Book via Instagram DM</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lantash Beauty Lounge by KC. All rights reserved.</p>
+    </footer>
 </body>
 </html>
