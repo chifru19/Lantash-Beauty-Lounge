@@ -119,3 +119,17 @@
     display: block !important;
     margin: 0 auto !important;
 }
+
+
+/* Fixed Owner Portrait Display */
+.owner-section .owner-image img {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 400px !important;
+    object-fit: contain !important;
+    background-color: #1a0f12;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
