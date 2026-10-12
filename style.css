@@ -97,3 +97,13 @@
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+/* Properly Sized Owner Portrait */
+.owner-image img {
+    width: 100%;
+    max-width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
