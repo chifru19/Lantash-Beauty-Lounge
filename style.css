@@ -20,3 +20,70 @@
     flex: 1;
 }
 
+
+.flyer-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.flyer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+.flyer-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 450px;
+    width: 100%;
+}
+.flyer-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+.flyer-card p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.flyer-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.flyer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+.flyer-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 450px;
+    width: 100%;
+}
+.flyer-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+.flyer-card p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
